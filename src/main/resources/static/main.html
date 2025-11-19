@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planner - Main Page</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Planner</div>
+  <nav>
+    <a href="#">로그인</a>
+    <a href="#">회원가입</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="layout">
+    <!-- 좌측 캘린더 -->
+    <div class="calendar">
+      <h3>캘린더</h3>
+      <div class="calendar-weekdays">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div>
+        <div>Fri</div><div class="weekend">Sat</div><div class="weekend">Sun</div>
+      </div>
+      <div id="calendarGrid">
+        <!-- JS로 날짜 생성 -->
+      </div>
+    </div>
+
+    <!-- 우측 일정 리스트 -->
+    <div class="todo-section">
+      <div class="todo-header">
+        <h2>일정</h2>
+        <button id="addTodoBtn">+ 일정 추가</button>
+      </div>
+
+      <div id="todoForm" class="hidden form-container">
+        <input type="text" id="todoTitle" placeholder="제목">
+        <textarea id="todoDesc" placeholder="상세 내용"></textarea>
+        <input type="datetime-local" id="todoDue">
+        <button id="saveTodoBtn">저장</button>
+      </div>
+
+      <div id="todoList" class="todo-list">
+        <!-- 일정 카드 JS로 생성 -->
+      </div>
+
+      <div class="today-summary">
+        <h3>오늘 일정</h3>
+        <div id="todayList">
+          <!-- 오늘 일정 요약 카드 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
