@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #2196f3, #03a9f4);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #ffeb3b;
+}
+
+/* 메인 레이아웃 */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.layout {
+    display: flex;
+    gap: 24px;
+}
+
+/* 좌측 캘린더 */
+.calendar {
+    flex: 1 1 320px;
+    background: linear-gradient(145deg, #ffffff, #e3f2fd);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays .weekend {
+    color: #f44336;
+}
+
+#calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+#calendarGrid div {
+    background: #bbdefb;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+#calendarGrid div:hover {
+    background: #64b5f6;
+    transform: translateY(-2px);
+}
+
+#calendarGrid div.today {
+    border: 2px solid #0288d1;
+}
+
+#calendarGrid div.selected {
+    background: #0288d1;
+    color: white;
+}
+
+/* 일정 섹션 */
+.todo-section {
+    flex: 2 1 600px;
+}
+
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#addTodoBtn {
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #03a9f4, #0288d1);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+#addTodoBtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0288d1, #0277bd);
+}
+
+/* 일정 폼 */
+.form-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(145deg, #f5f5f5, #e1f5fe);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-container input,
+.form-container textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #90caf9;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.form-container textarea {
+    height: 100px;
+}
+
+#saveTodoBtn {
+    padding: 10px 16px;
+    background: linear-gradient(90deg, #03a9f4, #0288d1);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#saveTodoBtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0288d1, #0277bd);
+}
+
+/* 일정 카드 */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.todo-card {
+    background: linear-gradient(145deg, #81d4fa, #4fc3f7);
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.todo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.todo-card.completed {
+    background: linear-gradient(145deg, #4dd0e1, #26c6da);
+    opacity: 0.85;
+    text-decoration: line-through;
+}
+
+.todo-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.todo-card p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #f1f1f1;
+}
+
+.todo-card .due-date {
+    font-size: 12px;
+    color: #e0f7fa;
+}
+
+.todo-card button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.complete-btn {
+    background-color: #0288d1;
+    color: white;
+}
+
+.complete-btn:hover {
+    background-color: #0277bd;
+}
+
+.delete-btn {
+    background-color: #ef5350;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+/* 오늘 일정 요약 */
+.today-summary {
+    margin-top: 30px;
+    padding: 12px;
+    background: #e1f5fe;
+    border-radius: 12px;
+}
